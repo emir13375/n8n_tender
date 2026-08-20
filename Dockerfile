@@ -10,7 +10,8 @@ RUN mkdir -p /opt/extra-modules && \
     npm init -y && \
     npm install \
       mammoth \
-      word-extractor
+      word-extractor \
+      gpt-tokenizer
 ENV NODE_PATH=/opt/extra-modules/node_modules
 
 COPY --from=tools /usr/bin/pdftoppm /usr/bin/pdftoppm
