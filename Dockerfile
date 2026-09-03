@@ -1,5 +1,5 @@
 FROM alpine:3.24 AS tools
-RUN apk add --no-cache poppler-utils p7zip imagemagick
+RUN apk add --no-cache poppler-utils p7zip
 
 FROM n8nio/n8n:2.34.4
 
