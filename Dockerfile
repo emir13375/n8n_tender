@@ -1,5 +1,5 @@
 FROM alpine:3.24 AS tools
-RUN apk add --no-cache poppler-utils p7zip
+RUN apk add --no-cache poppler-utils p7zip imagemagick
 
 FROM n8nio/n8n:2.34.4
 
@@ -13,6 +13,7 @@ RUN mkdir -p /opt/extra-modules && \
       word-extractor \
       gpt-tokenizer
 ENV NODE_PATH=/opt/extra-modules/node_modules
+ENV N8N_USER_FOLDER=/home/node/.n8n
 
 COPY --from=tools /usr/bin/pdftoppm /usr/bin/pdftoppm
 COPY --from=tools /usr/bin/7z /usr/bin/7z
