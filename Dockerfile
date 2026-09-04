@@ -11,7 +11,8 @@ RUN mkdir -p /opt/extra-modules && \
     npm install \
       mammoth \
       word-extractor \
-      gpt-tokenizer
+      gpt-tokenizer \
+      xlsx
 ENV NODE_PATH=/opt/extra-modules/node_modules
 ENV N8N_USER_FOLDER=/home/node/.n8n
 
